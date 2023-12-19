@@ -23,10 +23,12 @@ export const Sidebar = ({
     storageKey,
     {}
   );
+
   const {
     organization: activeOrganization,
     isLoaded: isLoadedOrg
   } = useOrganization();
+
   const {
     userMemberships,
     isLoaded: isLoadedOrgList
@@ -49,7 +51,7 @@ export const Sidebar = ({
     setExpanded((curr) => ({
       ...curr,
       [id]: !expanded[id]
-    }))
+    }));
   };
 
   if (!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading) {
